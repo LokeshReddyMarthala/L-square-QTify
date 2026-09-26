@@ -1,7 +1,9 @@
 .section {
   background-color: #121212;
-  padding: 20px 40px;
   color: white;
+  padding: 20px 40px 40px;
+  width: 100%;
+  overflow: hidden;
 }
 
 .header {
@@ -13,14 +15,15 @@
 
 .header h2 {
   margin: 0;
-  font-size: 18px;
+  color: white;
+  font-size: 20px;
   font-weight: 600;
 }
 
 .collapseButton {
   border: none;
   background: transparent;
-  color: #1db954;
+  color: #34c759;
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
@@ -28,6 +31,7 @@
 
 .cardGrid {
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
   gap: 24px 20px;
+  width: 100%;
 }

@@ -1,0 +1,38 @@
+.section {
+  background-color: #121212;
+  color: white;
+  padding: 20px 40px 40px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.header h2 {
+  margin: 0;
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.tabs {
+  min-height: 40px !important;
+  margin-bottom: 20px;
+}
+
+.tab {
+  min-width: auto !important;
+  min-height: 40px !important;
+  padding: 6px 16px !important;
+  color: white !important;
+  font-family: "Poppins", sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  text-transform: none !important;
+}
+
+.tab.Mui-selected {
+  color: #34c759 !important;
+}

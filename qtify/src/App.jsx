@@ -3,6 +3,7 @@ import { BrowserRouter } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/Hero/Hero";
 import Section from "./components/Section/Section";
+import Songs from "./components/Songs/Songs";
 
 function App() {
   return (
@@ -22,6 +23,8 @@ function App() {
         endpoint="https://qtify-backend.labs.crio.do/albums/new"
         type="carousel"
       />
+
+      <Songs />
     </BrowserRouter>
   );
 }

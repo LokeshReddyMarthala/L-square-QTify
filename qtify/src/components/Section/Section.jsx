@@ -6,25 +6,25 @@ import Carousel from "../Carousel/Carousel";
 import styles from "./Section.module.css";
 
 function Section({
-  title = "Top Albums",
+  title,
   endpoint,
   type = "grid",
 }) {
-  const [albums, setAlbums] = useState([]);
+  const [data, setData] = useState([]);
   const [showAll, setShowAll] = useState(type === "grid");
 
   useEffect(() => {
-    const fetchAlbums = async () => {
+    const fetchData = async () => {
       try {
         const response = await axios.get(endpoint);
-        setAlbums(response.data);
+        setData(response.data);
       } catch (error) {
-        console.error("Error fetching albums:", error);
+        console.error(`Failed to fetch ${title}:`, error);
       }
     };
 
-    fetchAlbums();
-  }, [endpoint]);
+    fetchData();
+  }, [endpoint, title]);
 
   return (
     <section className={styles.section}>
@@ -35,13 +35,13 @@ function Section({
           className={styles.collapseButton}
           onClick={() => setShowAll((previous) => !previous)}
         >
-          {showAll ? "Collapse" : "Show all"}
+          {showAll ? "Collapse" : "Show All"}
         </button>
       </div>
 
       {showAll ? (
         <div className={styles.cardGrid}>
-          {albums.map((album) => (
+          {data.map((album) => (
             <Card
               key={album.id}
               image={album.image}
@@ -51,7 +51,7 @@ function Section({
           ))}
         </div>
       ) : (
-        <Carousel data={albums} />
+        <Carousel data={data} />
       )}
     </section>
   );
