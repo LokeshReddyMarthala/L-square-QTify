@@ -11,7 +11,7 @@ function Section({
   type = "grid",
 }) {
   const [data, setData] = useState([]);
-  const [showAll, setShowAll] = useState(type === "grid");
+  const [showAll, setShowAll] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
