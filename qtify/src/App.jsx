@@ -1,21 +1,29 @@
-import { useState } from 'react'
-import heroImg from './assets/hero_headphones.png'
-import reactLogo from './assets/logo.png'
-import './App.css'
+import { BrowserRouter } from "react-router-dom";
+
+import Navbar from "./components/Navbar/Navbar";
+import Hero from "./components/Hero/Hero";
+import Section from "./components/Section/Section";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-        </div>
-      </section>
-    </>
-  )
+    <BrowserRouter>
+      <Navbar />
+
+      <Hero />
+
+      <Section
+        title="Top Albums"
+        endpoint="https://qtify-backend.labs.crio.do/albums/top"
+        type="grid"
+      />
+
+      <Section
+        title="New Albums"
+        endpoint="https://qtify-backend.labs.crio.do/albums/new"
+        type="carousel"
+      />
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
